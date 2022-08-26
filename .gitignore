@@ -1,0 +1,4 @@
+*.png
+*.webp
+.DS_Store
+.env
