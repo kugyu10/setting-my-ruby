@@ -1,17 +1,16 @@
 # encoding: utf-8
 # 引数に gif/png/jpg 画像ファイルを指定すると、同名のwebp画像に変換する
+# cwebp コマンドを事前にインストールしておいてください
+
 ARGV.each do |f|
 
-  p "towebp.rb start."
   inFileName = f
-  p 'inFileName: ' + inFileName
   
   if( !inFileName || !File.exist?(inFileName) ) then
     p '引数が不正です'
     return 1
   end
   
-  inFileName = f
   extention = File.extname(inFileName)
   basename = File.basename(inFileName, extention )
   outFileName = File.dirname(f) +"/"+ basename + '.webp'
